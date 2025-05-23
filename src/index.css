@@ -66,3 +66,119 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.twitter-extension {
+  width: 320px;
+  padding: 24px;
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Arial, sans-serif;
+  background: #fff;
+  color: #111;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.04);
+  border: 1px solid #ececec;
+}
+
+.twitter-extension h2 {
+  margin: 0 0 20px 0;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  color: #111;
+  letter-spacing: -0.5px;
+}
+
+.persona-selector {
+  margin-bottom: 18px;
+}
+
+.persona-dropdown {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #fafafa;
+  color: #111;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.persona-dropdown:focus {
+  border-color: #111;
+}
+
+.options {
+  margin-bottom: 18px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  cursor: pointer;
+  gap: 8px;
+  color: #222;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #111;
+}
+
+.transform-button {
+  width: 100%;
+  padding: 12px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s, box-shadow 0.18s;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.04);
+}
+
+.transform-button:hover:not(:disabled) {
+  background: #222;
+}
+
+.transform-button:disabled {
+  background: #e5e5e5;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-top: 2px solid #111;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.unsupported-message {
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+  margin: 0;
+}

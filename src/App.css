@@ -5,18 +5,30 @@ html {
   padding: 0;
   background: #fff;
 }
+.title {
+  margin: 0 0 10px 0;
+  font-size: 21px;
+  font-weight: 700;
+  text-align: center;
+  color: #111;
+  letter-spacing: -0.5px;
+}
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  display: block;
+  margin: 0 auto 10px auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
+  background: #f5f5f5;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #0000);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #0000);
 }
 
 @keyframes logo-spin {
@@ -43,108 +55,154 @@ html {
 }
 
 .twitter-extension {
-  width: 320px;
-  padding: 24px;
+  width: 340px;
+  padding: 28px 24px 24px 24px;
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Arial, sans-serif;
   background: #fff;
-  color: #000;
-  font-family: "DM Sans", sans-serif;
-  box-shadow: none;
-  border: none;
+  color: #111;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.06);
+  border: 1px solid #ececec;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 18px;
 }
 
 .twitter-extension h2 {
-  margin: 0 0 20px 0;
-  font-size: 24px;
+  margin: 0 0 6px 0;
+  font-size: 21px;
   font-weight: 700;
-  color: #000;
+  text-align: center;
+  color: #111;
   letter-spacing: -0.5px;
 }
 
+.non-twitter-textarea,
+.non-twitter-output {
+  width: 100%;
+  min-height: 80px;
+  max-height: 180px;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 15px;
+  background: #fafafa;
+  color: #111;
+  resize: vertical;
+  margin-bottom: 0;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.non-twitter-textarea:focus,
+.non-twitter-output:focus {
+  border-color: #111;
+  outline: none;
+}
+
 .persona-selector {
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .persona-dropdown {
   width: 100%;
-  padding: 12px 16px;
-  border: 2px solid #000;
+  padding: 10px 12px;
+  border: 1px solid #e5e5e5;
   border-radius: 8px;
+  background: #fafafa;
+  color: #111;
   font-size: 15px;
-  font-weight: 500;
-  color: #000;
-  background-color: #fff;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 16px center;
-}
-
-.persona-dropdown:hover {
-  background-color: #f8f8f8;
+  outline: none;
+  transition: border-color 0.2s;
 }
 
 .persona-dropdown:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+  border-color: #111;
+}
+
+.options {
+  margin-bottom: 0;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  cursor: pointer;
+  gap: 8px;
+  color: #222;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #111;
 }
 
 .transform-button {
   width: 100%;
-  padding: 14px;
-  background-color: #000;
+  padding: 12px;
+  background: #111;
   color: #fff;
   border: none;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background 0.18s, box-shadow 0.18s;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.04);
+  margin-top: 0;
 }
 
-.transform-button:hover {
-  background-color: #333;
-  transform: translateY(-1px);
+.transform-button:hover:not(:disabled) {
+  background: #222;
 }
 
-.transform-button:active {
-  background-color: #000;
-  transform: translateY(0);
+.transform-button:disabled {
+  background: #e5e5e5;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-top: 2px solid #111;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .unsupported-message {
-  color: #000;
-  font-size: 15px;
-  line-height: 1.5;
   text-align: center;
-  padding: 20px;
-  background-color: #f8f8f8;
-  border-radius: 8px;
+  color: #888;
+  font-size: 14px;
   margin: 0;
-  font-weight: 500;
 }
 
-.chat-textarea {
-  width: 100%;
-  min-height: 80px;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  padding: 14px 16px;
-  border: 1.5px solid #e0e0e0;
-  border-radius: 10px;
-  background: #fafbfc;
-  color: #222;
-  resize: vertical;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
-  transition: border-color 0.2s, box-shadow 0.2s;
-  font-family: "DM Sans", sans-serif;
-  margin-bottom: 16px;
-}
-
-.chat-textarea:focus {
-  outline: none;
-  border-color: #1d9bf0;
-  box-shadow: 0 0 0 2px rgba(29, 155, 240, 0.12);
-  background: #fff;
+.persona-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid #ececec;
+  background: #fafafa;
 }
